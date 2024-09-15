@@ -1,0 +1,526 @@
+<header class="overflow-hidden background-img">
+  <div class="bg-[#012e5a] h-10 info-font w-[100%]"></div>
+
+  <div class="mr-auto ml-auto pl-[400px] pr-[400px] pt-7 flex gap-[10vw]">
+    <div class="align-middle">
+      <a href="https://lms.goodgradestudent.com/"
+        ><img src="../../../assets/Images/good.webp" alt="" class="w-64 h-auto"
+      /></a>
+    </div>
+    <div>
+      <ul
+        class="flex flex-wrap gap-[2vw] mt-5 text-black font-[Roboto, sans-serif] text-base font-medium"
+      >
+      <li class="home-nav">
+        <a [routerLink]="['/home']">HOME</a>
+      </li>
+        <li class="home-nav"><a [routerLink]="['/coursepage']">COURSES</a></li>
+        <li class="home-nav"><a href="/about-us">ABOUT US</a></li>
+        <li class="home-nav"><a [routerLink]="['/cont']">CONTACT US</a></li>
+        <li class="home-nav">
+          <a href="https://lms.goodgradestudent.com/shop/">LIBRARY</a>
+        </li>
+        <li>
+          <a [routerLink]="['/addcourse']"
+            ><mat-icon>favorite_border</mat-icon></a
+          >
+        </li>
+        <li>
+          <span
+            class="border-solid border-[3.3px] border-x-white text-[20px] search-icon"
+            ><mat-icon class="py-1 font-medium">search</mat-icon></span
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div *ngFor="let course of courses">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+
+  <hr class="h-1 bg-[#878c90] mt-10 mb-10" />
+  <section class="flex flex-col lg:flex-row px-8 2xl:px-[360px] xl:px-[100px]">
+    <div class="w-full lg:w-3/4 md:w-full pr-[7px]">
+      <div
+        class="text-3xl md:text-4xl xl:text-start lg:text-start md text-center sm:text-center lg:text-4xl xl:text-5xl font-bold mb-8 txt-main"
+      >
+        {{ course.courseTitle }}
+      </div>
+
+      <!-- course category and course instructor display section -->
+
+      <div>
+        <div class="flex flex-col sm:flex-row">
+          <div class="flex items-center mb-8 pr-16">
+            <img
+              class="w-10 h-10 rounded-full mr-4"
+              src="{{ course.courseDesImg }}"
+              alt="photo of teacher"
+            />
+            <div class="text-sm">
+              <div class="text-gray-600 l">Teacher</div>
+              <div class="text-black">Fasil</div>
+            </div>
+          </div>
+
+          <div class="flex items-center mb-8">
+            <div>
+              <img
+                class="w-10 h-10 rounded-full mr-4"
+                src="https://i.pinimg.com/564x/9c/73/03/9c7303e335dca4b3c6680907a7049d11.jpg"
+                alt="Avatar of Jonathan Reinink"
+              />
+            </div>
+            <div class="text-sm">
+              <div class="text-gray-600">Category:</div>
+              <div class="text-gray-900">
+                {{ course.courseCategory | uppercase }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p-tabView class="">
+        <!-- description section -->
+
+        <p-tabPanel header="Description">
+          <div class="bg-white">
+            <img
+              class="pt-10"
+              src="https://lms.goodgradestudent.com/wp-content/uploads/2018/08/154833-OUCY4R-62-870x440.jpg "
+            />
+            <p class="pt-5">{{ course.courseDesText }}</p>
+            
+          </div>
+        </p-tabPanel>
+
+        <!-- curriculum section -->
+
+        <p-tabPanel header="Curriculum">
+          <div class="bg-white pt-10 text-sm text-black">
+            <div class="txt-main">
+              <h1 class="txt-main">Semaine 1</h1>
+              <ol type="" class="">
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Leçon un</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2 txt-main" [routerLink]="['/curr']"
+                        >Leçon deux</a
+                      >
+                    </div>
+                    <div class="">30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Content 1</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Content 1</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/quiz.svg"
+                        class="masterstudy-curriculum-accordion__image"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">quiz</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+              </ol>
+
+              <h1 class="txt-main pt-10">Semaine 2</h1>
+              <ol type="1">
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Leçon un</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2 txt-main" [routerLink]="['/curr']"
+                        >Leçon deux</a
+                      >
+                    </div>
+                    <div class="">30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Content 1</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+                <li></li>
+              </ol>
+
+              <h1 class="txt-main pt-10">Semaine 3</h1>
+              <ol type="1">
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Leçon un</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Leçon un</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2 txt-main" [routerLink]="['/curr']"
+                        >Leçon deux</a
+                      >
+                    </div>
+                    <div class="">30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Content 1</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+                <li></li>
+              </ol>
+            </div></div
+        ></p-tabPanel>
+
+        <!-- FAQ section -->
+
+        <p-tabPanel header="FAQ">
+          <div class="bg-white pt-5">
+            <div class="card">
+              <p-accordion [multiple]="true">
+                <p-accordionTab
+                  *ngFor="let faq of faqs"
+                  [header]="faq.question"
+                  class="line-height-3 m-0"
+                >
+                  Ans: {{ faq.answer }}
+                </p-accordionTab>
+              </p-accordion>
+            </div>
+          </div>
+        </p-tabPanel>
+
+        <!-- announcement section -->
+
+        <p-tabPanel header="Announcement">
+          <div class="bg-white pt-5">
+            <div class="">
+              <h1 class="txt-main">
+                Productivity Hacks to Get More Done in 2018
+              </h1>
+              <p class="text-xs txt-main">— 28 February 2017</p>
+              <div class="text-xs text-black">
+                <p class="font-bold">
+                  1. Facebook News Feed Eradicator (free chrome extension)
+                </p>
+                <p>
+                  Stay focused by removing your Facebook newsfeed and replacing
+                  it with an inspirational quote. Disable the tool anytime you
+                  want to see what friends are up to!
+                </p>
+                <p class="font-bold">
+                  2. Hide My Inbox (free chrome extension for Gmail)
+                </p>
+                <p>
+                  Stay focused by hiding your inbox. Click "show your inbox" at
+                  a scheduled time and batch processs everything one go.
+                </p>
+                <p class="font-bold">3. Habitica (free mobile + web app)</p>
+                <p>
+                  Gamify your to do list. Treat your life like a game and earn
+                  gold goins for getting stuff done!
+                </p>
+              </div>
+            </div>
+          </div></p-tabPanel
+        >
+
+        <!-- review section -->
+
+        <p-tabPanel header="Review">
+          <div class="pt-10">
+            <p-editor
+              [(ngModel)]="htmlEditor"
+              [style]="{ height: '320px' }"
+            ></p-editor>
+          </div>
+          <div class="card flex justify-content-center mt-3">
+            <p-rating
+              [(ngModel)]="value"
+              [style]="{ color: '#FFA500' }"
+              [cancel]="false"
+            ></p-rating>
+          </div>
+          <button
+            class="bg-blue-600 text-white font-bold justify-center px-7 py-3 mt-3"
+          >
+            Add Review
+          </button>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+
+    <div class="xl:w-1/4 pl-5 md:pt-8">
+      <div class="pb-7 flex">
+        <mat-icon
+          class="text-red-500 text-[17px] border border-solid border-black rounded-full h-16 w-16 text-center pt-1 hover:bg-blue-600 hover:border-blue-600 hover:text-white"
+          >favorite_border</mat-icon
+        >
+        <div class="pl-1 pt-0.5 text-gray-800">Add to wishlist</div>
+      </div>
+      <button
+        class="bg-[#5CBC87] hover:bg-blue-950 text-white font-bold py-4 rounded-xl mb-7 text-center w-full txt-main"
+      >
+        ENROLL COURSE
+      </button>
+      <div class="">
+        <div class="flex justify-between py-3 text-sm txt-main px-3">
+          <p class="">
+            Enrolled: <label class="font-bold">4</label>
+          </p>
+
+          <i class="pi pi-users text-2xl text-blue-700"></i>
+        </div>
+        <hr class="h-4" />
+        <div class="flex justify-between py-3 text-sm txt-main px-3">
+          <p class="">
+            Duration: <label class="font-bold">{{ course.courseDuration }}</label>
+          </p>
+          <i class="pi pi-clock text-2xl text-blue-700"></i>
+        </div>
+        <hr class="h-5" />
+        <div class="flex justify-between py-3 text-sm txt-main px-3">
+          <p class="">
+            Lectures: <label class="font-bold">11</label>
+          </p>
+          <i class="pi pi-users text-2xl text-blue-700"></i>
+        </div>
+        <hr class="h-5" />
+
+        <div class="flex justify-between py-3 text-sm txt-main px-3">
+          <p class="">
+            Video: <label class="font-bold">2</label>
+          </p>
+          <i class="pi pi-video text-2xl text-blue-700"></i>
+        </div>
+        <hr class="h-5" />
+
+        <div class="flex justify-between py-3 text-sm txt-main px-3">
+          <p class="">
+            Level: <label class="font-bold">Beginner</label>
+          </p>
+          <i class="pi pi-chart-bar text-2xl text-blue-700"></i>
+        </div>
+        <hr class="" />
+      </div>
+      <div class="border-l border-gray-300 pl-7">
+        <!-- top courses -->
+
+        <div class="pt-6">
+          <ol>
+            <li class="mb-5">
+              <a href="">
+                <div class="flex">
+                  <img
+                    width="75"
+                    height="75"
+                    src="https://lms.goodgradestudent.com/wp-content/uploads/2022/07/joshua-slate-q1bPJfULENA-unsplash-1-75x75.jpg"
+                  />
+                  <div class="pl-2">
+                    <div class="">Traitement des signaux numériques</div>
+                    <button class="bg-green-500 px-3 rounded text-white mt-0.5">
+                      Libre
+                    </button>
+                    <div class="text-gray-400 text-xs mt-1">By Fasil Getie</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="mb-5">
+              <a href="">
+                <div class="flex">
+                  <img
+                    width="75"
+                    height="75"
+                    src="https://lms.goodgradestudent.com/wp-content/uploads/2018/08/photo-1512686096451-a15c19314d59-75x75.jpeg"
+                  />
+                  <div class="pl-2">
+                    <div class="">Traitement des signaux numériques</div>
+                    <button class="bg-green-500 px-3 rounded text-white mt-0.5">
+                      Libre
+                    </button>
+                    <div class="text-gray-400 text-xs mt-1">By Fasil Getie</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <div class="flex">
+                  <img
+                    width="75"
+                    height="75"
+                    src="https://lms.goodgradestudent.com/wp-content/uploads/2018/08/photo-1509343256512-d77a5cb3791b-min-75x75.jpeg"
+                  />
+                  <div class="pl-2">
+                    <div class="">Traitement des signaux numériques</div>
+                    <button class="bg-green-500 px-3 rounded text-white mt-0.5">
+                      Libre
+                    </button>
+                    <div class="text-gray-400 text-xs mt-1">By Fasil Getie</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ol>
+        </div>
+
+        <div>
+          <div class="flex justify-between pt-14">
+            <hr class="h-1 w-1/5 bg-[#385BCE]" />
+            <hr class="h-1 w-2/3 mt-0.5" />
+          </div>
+
+          <h1 class="text-xl font-bold pb-5 pt-8">Archive</h1>
+
+          <!-- search option -->
+
+          <mat-form-field class="w-full">
+            <mat-label>Select month</mat-label>
+            <mat-select [(value)]="selectedCourse">
+              <mat-option>Select month</mat-option>
+              <mat-option value="option1">July</mat-option>
+              <mat-option value="option2">Augest 2022</mat-option>
+              <mat-option value="option3">September 2023</mat-option>
+              <mat-option value="option2">Augest 2022</mat-option>
+              <mat-option value="option3">September 2023</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="flex justify-between pt-14">
+            <hr class="h-1 w-1/5 bg-[#385BCE]" />
+            <hr class="h-1 w-2/3 mt-0.5" />
+          </div>
+
+          <!-- working hour -->
+
+          <h1 class="pt-14 pb-7 font-bold text-2xl">Worrking hours</h1>
+          <div class="divide-y divide-dashed text-gray-700 text-[15px]">
+            <div class="flex justify-between hover:text-blue-600">
+              <div class="pb-1">Monday</div>
+              <div>9:30 am - 6:00 pm</div>
+            </div>
+            <div class="flex justify-between hover:text-blue-600">
+              <div class="pb-1">Tuesday</div>
+              <div>9:30 am - 6:00 pm</div>
+            </div>
+            <div class="flex justify-between hover:text-blue-600">
+              <div class="pb-1">Wednsday</div>
+              <div>9:30 am - 6:00 pm</div>
+            </div>
+            <div class="flex justify-between hover:text-blue-600">
+              <div class="pb-1">Tursday</div>
+              <div>9:30 am - 6:00 pm</div>
+            </div>
+            <div class="flex justify-between hover:text-blue-600">
+              <div class="pb-1">Friday</div>
+              <div>9:30 am - 5:00 pm</div>
+            </div>
+            <div class="flex justify-between">
+              <div class="pb-1 hover:text-red-600">Saturday</div>
+              <div class="">
+                <span class="pl-2 pr-2 text-white bg-red-600 rounded"
+                  >closed</span
+                >
+              </div>
+            </div>
+            <div class="flex justify-between mb-10">
+              <div class="pb-1 hover:text-red-600">Sunday</div>
+              <div class="">
+                <span class="pl-2 pr-2 text-white bg-red-600 rounded"
+                  >closed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
